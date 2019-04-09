@@ -71,11 +71,19 @@ window.addEventListener('focus', function(event) {
     focusOn.style.color = 'orange';
 });
 
-// load
+// load and stopPropogration
 
-const onLoad = document.querySelector('.container');
+const onLoad = document.querySelector('.content-section');
 
 window.addEventListener('load', function(event) {
     onLoad.style.border = "1px solid black";
     event.stopPropagation;
+});
+
+// prevent default
+
+const stopRefresh = document.querySelector('.nav a');
+
+stopRefresh.addEventListener('click', function(event) {
+    event.preventDefault();
 });

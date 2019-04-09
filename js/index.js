@@ -23,6 +23,7 @@ window.addEventListener('keydown', function(event) {
 
      window.addEventListener ('keyup', function(event) {
          introChange.style.background = "";
+         
      });
 });
 
@@ -46,3 +47,35 @@ window.addEventListener('dblclick', function(event) {
 });
 
 
+// click & stretch task
+
+const btnMove = document.querySelector('.btn');
+
+btnMove.addEventListener('click', function(eventObject){
+  TweenMax.to(".btn", 1, {x: 35, ease: Bounce.easeOut});
+});
+
+// wheel 
+
+const moveWheel = document.querySelector('.content-destination');
+
+window.addEventListener('wheel', function(event) {
+    moveWheel.style.border = '2px dashed pink';
+});
+
+// focus
+
+const focusOn = document.querySelector('.destination');
+
+window.addEventListener('focus', function(event) {
+    focusOn.style.color = 'orange';
+});
+
+// load
+
+const onLoad = document.querySelector('.container');
+
+window.addEventListener('load', function(event) {
+    onLoad.style.border = "1px solid black";
+    event.stopPropagation;
+});

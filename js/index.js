@@ -47,13 +47,18 @@ window.addEventListener('dblclick', function(event) {
 });
 
 
-// click & stretch task
+// click & stretch task & stopPropagation
+const content = document.querySelector('.content-pick');
 
-const btnMove = document.querySelector('.btn');
+content.addEventListener('click', function(event) {
+    const btnMove = document.querySelector('.btn');
 
-btnMove.addEventListener('click', function(eventObject){
-  TweenMax.to(".btn", 1, {x: 35, ease: Bounce.easeOut});
+    btnMove.addEventListener('click', function(eventObject){
+        TweenMax.to(".btn", 1, {x: 35, ease: Bounce.easeOut});
+            event.stopPropagation();
+    });
 });
+
 
 // wheel 
 
@@ -71,19 +76,20 @@ window.addEventListener('focus', function(event) {
     focusOn.style.color = 'orange';
 });
 
-// load and stopPropogration
+// load 
 
 const onLoad = document.querySelector('.content-section');
 
 window.addEventListener('load', function(event) {
     onLoad.style.border = "1px solid black";
-    event.stopPropagation;
+    
 });
 
-// prevent default
+// prevent default and stopPropagation
 
 const stopRefresh = document.querySelector('.nav a');
 
 stopRefresh.addEventListener('click', function(event) {
     event.preventDefault();
+    
 });

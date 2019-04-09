@@ -85,7 +85,7 @@ window.addEventListener('load', function(event) {
     
 });
 
-// prevent default and stopPropagation
+// prevent default 
 
 const stopRefresh = document.querySelector('.nav a');
 
